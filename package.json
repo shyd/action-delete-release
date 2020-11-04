@@ -4,7 +4,8 @@
   "description": "Action to delete a specific release",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "build": "ncc build src/index.js --minify",
+    "start": "node src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -22,5 +23,8 @@
   "homepage": "https://github.com/shyd/action-delete-release#readme",
   "dependencies": {
     "@octokit/rest": "^18.0.9"
+  },
+  "devDependencies": {
+    "@zeit/ncc": "^0.22.3"
   }
 }
