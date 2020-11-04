@@ -1,0 +1,26 @@
+{
+  "name": "action-delete-release",
+  "version": "1.0.0",
+  "description": "Action to delete a specific release",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shyd/action-delete-release.git"
+  },
+  "keywords": [
+    "action"
+  ],
+  "author": "shyd",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shyd/action-delete-release/issues"
+  },
+  "homepage": "https://github.com/shyd/action-delete-release#readme",
+  "dependencies": {
+    "@octokit/rest": "^18.0.9"
+  }
+}

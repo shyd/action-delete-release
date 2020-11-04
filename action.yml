@@ -1,0 +1,22 @@
+# https://help.github.com/en/articles/metadata-syntax-for-github-actions
+
+name: 'Delete given release by tag'
+description: 'Delete given release by tag'
+author: "shyd"
+inputs:
+  github_token:
+    description: 'Token for the repo. Can be passed in using $\{{ secrets.GITHUB_TOKEN }}'
+    required: true
+  release_tag:
+    description: 'Release tag to be deleted. Can be passed in using $\{{ secrets.GITHUB_RELEASE_TAG }}'
+    required: true
+  repository:
+    description: 'Repository name. Default or empty value represents current github repository (${GITHUB_REPOSITORY})'
+    default: ''
+    required: false
+runs:
+  using: "node12"
+  main: "index.js"
+branding:
+  color: "red"
+  icon: "delete"
