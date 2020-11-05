@@ -2,7 +2,7 @@ const { Octokit } = require("@octokit/rest");
 const { env } = require ("process");
 const token = env.INPUT_GITHUB_TOKEN
 const repository = env.INPUT_REPOSITORY || env.GITHUB_REPOSITORY
-const tag = env.INPUT_GITHUB_RELEASE_TAG;
+const tag = env.INPUT_RELEASE_TAG
 const [owner, repo] = repository.split("/")
 
 const octokit = new Octokit({
@@ -15,7 +15,7 @@ octokit.repos.getReleaseByTag({
     tag
 }).then(res => {
     if(!res.data){
-        console.error("💡 No release found, skip delete.");
+        console.error("💡 No release found with tag '" + tag + "', skip delete.");
         return
     }
     const release_id = res.data.id
